@@ -1,0 +1,14 @@
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.csprojAssemblyReference.cache
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.FrmLogin.resources
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.FrmPrincipal.resources
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.Properties.Resources.resources
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.csproj.GenerateResource.cache
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.csproj.CoreCompileInputs.cache
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\ChatUI.exe.config
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\ChatUI.exe
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\ChatUI.pdb
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\Entidades.dll
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\Entidades.pdb
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.csproj.CopyComplete
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.exe
+C:\Users\Paola\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\ChatUI.pdb
