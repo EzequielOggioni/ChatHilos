@@ -53,7 +53,7 @@ namespace Entidades
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -79,6 +79,106 @@ namespace Entidades
                     sb.Append(hashBytes[i].ToString("X2"));
                 }
                 return sb.ToString();
+            }
+        }
+
+
+             
+        public static List<Persona> TraesPersonas()
+        {
+            List<Persona> personas = new List<Persona>();
+            string consulta = " Select * from personas ";
+
+            try
+            {
+                command.CommandText = consulta;
+                sqlConn.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    personas.Add(new Persona(dr["Apellido"].ToString(), dr["Nombre"].ToString(), int.Parse(dr["Id"].ToString()), double.Parse(dr["DNI"].ToString())));
+                }
+
+                return personas;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+
+
+        }
+
+
+        public static List<Mensaje> TraerMensajes(Usuario usuarioLogueado, List<Persona> todasLasPersonas)
+        {
+            List<Mensaje> mensajes = new List<Mensaje>();
+            string consulta = " Select * from mensajes where usuarioid= @usuario or personaid = @persona order by fecha desc ";
+
+            try
+            {
+                command.CommandText = consulta;
+                command.Parameters.Clear();
+                command.Parameters.Add(new SqlParameter("@usuario", usuarioLogueado.UsuarioId));
+                command.Parameters.Add(new SqlParameter("@persona", usuarioLogueado.PersonId));
+                sqlConn.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                  mensajes.Add(new Mensaje(dr["Mensaje"].ToString(), Persona.RetornarPersonaPorId(todasLasPersonas, int.Parse(dr["PersonaId"].ToString()))));
+                }
+
+                return mensajes;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+
+
+        }
+
+        
+
+        public static bool InsertarMensaje(Usuario user, Persona per, string mensaje)
+        {
+            string consulta = " INSERT INTO Mensajes ([UsuarioId],[mensaje],[personaId] ,[Fecha]) VALUES (@UsuarioId ,@mensaje,@personaId,getdate())";
+
+            try
+            {
+                command.CommandText = consulta;
+                command.Parameters.Clear();
+                command.Parameters.Add(new SqlParameter("@UsuarioId", user.UsuarioId));
+                command.Parameters.Add(new SqlParameter("@mensaje", mensaje));
+                command.Parameters.Add(new SqlParameter("@personaId", per.PersonId));
+
+                sqlConn.Open();
+                int retorno = command.ExecuteNonQuery();
+                    
+                return retorno != -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
             }
         }
 

@@ -117,9 +117,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{bd3b648c-d9bb-458d-9f59-564cf9d792bf}</Project>
       <Name>Entidades</Name>
