@@ -173,7 +173,6 @@ namespace Entidades
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
